@@ -7,6 +7,7 @@ intents = nextcord.Intents.all()
 bot = commands.Bot(command_prefix = '?', intents=intents)
 app = Flask('')
 import os
+
 @app.route('/')
 def home():
     return "Hello. I am alive!"
@@ -25,7 +26,7 @@ def vscode(user_id):
         )
     
 def run():
-    app.run(host='0.0.0.0',port=os.environ['PORT'])
+    app.run(host='127.0.0.1',port=5000)
 
 def keep_alive():
     t = Thread(target=run)
