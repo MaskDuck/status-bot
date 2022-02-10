@@ -4,9 +4,9 @@ import nextcord
 from flask import jsonify
 from nextcord.ext import commands
 intents = nextcord.Intents.all()
-bot = commands.Bot(command_prefix = '?')
+bot = commands.Bot(command_prefix = '?', intents=intents)
 app = Flask('')
-
+import os
 @app.route('/')
 def home():
     return "Hello. I am alive!"
@@ -36,4 +36,4 @@ async def henlo(ctx):
     await ctx.send('hi')
 
 keep_alive()
-bot.run('')
+bot.run(os.environ['token'])
