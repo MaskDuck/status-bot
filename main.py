@@ -14,7 +14,7 @@ def home():
 @app.route('/vscode/<user_id>')
 def vscode(user_id):
     member = bot.get_guild(941320065444360242).get_member(int(user_id))
-    if member.activity.name.lower() == 'playing visual studio code':
+    if member.activity.name.lower() == 'visual studio code':
         return jsonify(
             {
                 "schemaVersion": 1,
